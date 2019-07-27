@@ -1,0 +1,57 @@
+// 區塊間距
+$padding: (
+  p: 'padding',
+  pt: 'padding-top',
+  pb: 'padding-bottom',
+  pl: 'padding-left',
+  pr: 'padding-right',
+  px: '',
+  py: ''
+);
+
+@each $name, $value in $padding {
+  @for $i from 1 through 5 {
+    .#{ $name }-#{ $i } {
+      @if $name == 'px' {
+        padding-left: $unit * $i;
+        padding-right: $unit * $i;
+      } @else if $name == 'py' {
+        padding-top: $unit * $i;
+        padding-bottom: $unit * $i;
+      } @else {
+        #{ $value }: $unit * $i;
+      }
+    }
+  }
+}
+// ------------------------------------
+@each $name, $value in $mediaQuery {
+  @media only screen and (min-width: $value) {
+    @each $p_name, $p_value in $padding {
+      @for $i from 1 through 5 {
+        #{ $p_name }-#{ $name }-#{ $i } {
+          @if $p_name == 'px' {
+            padding-left: $unit * $i;
+            padding-right: $unit * $i;
+          } @else if $p_name == 'py' {
+            padding-top: $unit * $i;
+            padding-bottom: $unit * $i;
+          } @else {
+            #{ $p_value }: $unit * $i;
+          }
+        }
+      }
+      #{ $p_name }-#{ $name }-auto {
+        @if $p_name == 'px' {
+          padding-left: auto;
+          padding-right: auto;
+        } @else if $p_name == 'py' {
+          padding-top: auto;
+          padding-bottom: auto;
+        } @else {
+          #{ $p_value }: auto
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through $total_col {
+  $width: 100% / ($total_col / $i);
+
+  .col-#{ $i } {
+    max-width: 100%;
+    flex: 0 0 $width;
+  }
+}
+
+@each $name, $value in $mediaQuery {
+  @media only screen and (min-width: $value) {
+    @for $i from 1 through $total_col {
+      $width: 100% / ($total_col / $i);
+
+      .col-#{ $name }-#{ $i } {
+        max-width: 100%;
+        flex: 0 0 $width;
+      }
+    }
+  }
+}

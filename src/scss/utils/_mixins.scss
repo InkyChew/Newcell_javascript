@@ -1,0 +1,19 @@
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h
+}
+
+@mixin flex($justifyContent, $alignItems: $justifyContent) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+// 背景圖片
+@mixin bg($w, $h, $url, $bgSize: contain) {
+  @include size($w, $h);
+  background-image: url($url);
+  background-size: $bgSize;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,60 @@
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+  link(href='https://fonts.googleapis.com/css?family=Lato&display=swap', rel='stylesheet')
+  //Custom Css
+  link(rel='stylesheet', type='text/css', href='./style/cust.css')
+  title NEWCELL
+#newcell.container-fluid
+  #order.d-flex.justify-content-between
+    #topleft.d-flex.justify-content-start
+    #logo.d-flex.flex-column
+      img.logoImg(src='assets/images/king_happy.png')
+      label.text-center.logo FREECELL
+    #topright.d-flex.justify-content-end
+  #unorder.d-flex.justify-content-between
+  #main_menu
+    nav.navbar.navbar-expand-lg.navbar-light
+      a.navbar-brand(href='#')
+        img(src='assets/images/info.png' width='50' alt='info')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggler', aria-controls='navbarToggler', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarToggler.collapse.navbar-collapse.d-flex.justify-content-between
+        ul.navbar-nav.d-flex.justify-content-start
+          li.nav-item.active.mx-2
+            label TIME: 00:00
+          li.nav-item.mx-2
+            label SCORE: 0
+        ul.navbar-nav.d-flex.justify-content-end
+          li
+            button.btn.mx-2(data-toggle="modal" data-target="#newgameModal") NEWGAME
+          li.nav-item
+            button#restart.btn.mx-2(href='#') RESTART
+          li.nav-item
+            button.btn.mx-2(href='#') HINT
+          li.nav-item
+            button.btn.mx-2(href='#') UNDO
+
+  // Modal
+  #newgameModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='newgameModalLabel', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body.text-center
+          img.modalImg(src='assets/images/king_angry.png')
+          h4.my-4 START A NEW GAME
+          label.msg Are you sure you want to give up?
+        .modal-footer.mx-auto
+          button#newgame.btn(type='button', data-dismiss='modal') NEW GAME
+
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+script(src='js/index.js')

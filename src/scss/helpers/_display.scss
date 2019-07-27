@@ -1,0 +1,58 @@
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-none {
+  display: none;
+}
+
+$mediaQuery: (
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1140px'
+);
+
+@each $name, $value in $mediaQuery {
+  @media only screen and (min-width: $value) {
+    .d-#{ $name }-flex {
+      display: flex;
+    }
+
+    .d-#{ $name }-inline-flex {
+      display: inline-flex;
+    }
+
+    .d-#{ $name }-block {
+      display: block;
+    }
+
+    .d-#{ $name }-inline-block {
+      display: inline-block;
+    }
+
+    .d-#{ $name }-inline {
+      display: inline;
+    }
+
+    .d-#{ $name }-none {
+      display: none;
+    }
+  }
+}

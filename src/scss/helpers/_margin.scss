@@ -1,0 +1,68 @@
+// 區塊間距
+$margin: (
+  m: 'margin',
+  mt: 'margin-top',
+  mb: 'margin-bottom',
+  ml: 'margin-left',
+  mr: 'margin-right',
+  mx: '',
+  my: ''
+);
+
+@each $name, $value in $margin {
+  @for $i from 1 through 5 {
+    .#{ $name }-#{ $i } {
+      @if $name == 'mx' {
+        margin-left: $unit * $i;
+        margin-right: $unit * $i;
+      } @else if $name == 'my' {
+        margin-top: $unit * $i;
+        margin-bottom: $unit * $i;
+      } @else {
+        #{ $value }: $unit * $i;
+      }
+    }
+  }
+  .#{ $name }-auto {
+    @if $name == 'mx' {
+      margin-left: auto;
+      margin-right: auto;
+    } @else if $name == 'my' {
+      margin-top: auto;
+      margin-bottom: auto;
+    } @else {
+      #{ $value }: auto
+    }
+  }
+}
+// ------------------------------------
+@each $name, $value in $mediaQuery {
+  @media only screen and (min-width: $value) {
+    @each $m_name, $m_value in $margin {
+      @for $i from 1 through 5 {
+        #{ $m_name }-#{ $name }-#{ $i } {
+          @if $m_name == 'mx' {
+            margin-left: $unit * $i;
+            margin-right: $unit * $i;
+          } @else if $m_name == 'my' {
+            margin-top: $unit * $i;
+            margin-bottom: $unit * $i;
+          } @else {
+            #{ $m_value }: $unit * $i;
+          }
+        }
+      }
+      #{ $m_name }-#{ $name }-auto {
+        @if $m_name == 'mx' {
+          margin-left: auto;
+          margin-right: auto;
+        } @else if $m_name == 'my' {
+          margin-top: auto;
+          margin-bottom: auto;
+        } @else {
+          #{ $m_value }: auto
+        }
+      }
+    }
+  }
+}
