@@ -1,0 +1,74 @@
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
+  <!--Custom Css-->
+  <link rel="stylesheet" type="text/css" href="./style/cust.css">
+  <title>NEWCELL</title>
+</head>
+<div class="container-fluid" id="newcell">
+  <div class="d-flex justify-content-between" id="order">
+    <div class="d-flex justify-content-start" id="topleft"></div>
+    <div class="d-flex flex-column" id="logo"><img class="logoImg" src="assets/images/king_happy.png">
+      <label class="text-center logo">FREECELL</label>
+    </div>
+    <div class="d-flex justify-content-end" id="topright"></div>
+  </div>
+  <div class="d-flex justify-content-between" id="unorder"></div>
+  <div id="main_menu">
+    <nav class="navbar navbar-expand-lg navbar-light"><a class="navbar-brand" href="#"><img src="assets/images/info.png" width="50" alt="info"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarToggler">
+        <ul class="navbar-nav d-flex justify-content-start">
+          <li class="nav-item active mx-2">
+            <label>TIME: 00:00</label>
+          </li>
+          <li class="nav-item mx-2">
+            <label>SCORE: 0</label>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex justify-content-end">
+          <li>
+            <button class="btn mx-2" data-toggle="modal" data-target="#newgameModal">NEWGAME</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn mx-2" id="restart" href="#">RESTART</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn mx-2" href="#">HINT</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn mx-2" href="#">UNDO</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Modal-->
+  <div class="modal fade" id="newgameModal" tabindex="-1" role="dialog" aria-labelledby="newgameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body text-center"><img class="modalImg" src="assets/images/king_angry.png">
+          <h4 class="my-4">START A NEW GAME</h4>
+          <label class="msg">Are you sure you want to give up?</label>
+        </div>
+        <div class="modal-footer mx-auto">
+          <button class="btn" id="newgame" type="button" data-dismiss="modal">NEW GAME</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript-->
+<!-- jQuery first, then Popper.js, then Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
